@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+ #wrap{
+   position: relative;
+ }
+    #inner2{
+      position: absolute;
+    }
+    /*包含块的父级是开启定位最近的祖先元素*/
+  </style>
+</head>
+<body id="body">
+   <div id="wrap">wrap
+     <div id="inner1">inner1
+           <div id="inner2">inner2</div>
+     </div>
+   </div>
+</body>
+<script type="text/javascript">
+//parentNode代表直接父级，跟包含块没有关系
+  window.onload = function () {
+    var inner2 = document.querySelector("#inner2");
+    console.log(inner2.parentNode.id);
+  }
+</script>
+</html>

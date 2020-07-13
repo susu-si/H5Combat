@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+</body>
+<script type="text/javascript">
+  /*
+  * ev || event
+  * offsetParent
+  * 事件绑定（DOM2）可以累计绑定事件监听
+  * addEventListener() 绑定多个事件的时候是正序的
+  * attachEvent() 绑定多个事件时是倒序的
+  *addEventListener的this是使用它的对象
+  * attachEvent的this是window
+  *
+  * 事件流分三个阶段：
+  *               捕获  目标处理  冒泡
+  *               捕获 冒泡的前提：有嵌套的dom结构
+  * 鼠标滚轮
+  * */
+  var wrap = document.querySelector("#wrap");
+
+  if (wrap.addEventListener){
+     wrap.addEventListener("click",function () {
+      console.log(1);
+    })
+    wrap.addEventListener("click",function () {
+      console.log(2);
+    })
+  }else {
+    wrap.attachEvent("onclick",function () {
+      console.log(1);
+    })
+    wrap.attachEvent("onclick",function () {
+      console.log(2);
+    })
+  }
+
+</script>
+</html>

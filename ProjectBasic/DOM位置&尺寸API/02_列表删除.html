@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+
+  </style>
+</head>
+<body id="body">
+   <ul class="list">
+     <li>xfz<a href="javascript:;">删除</a></li>
+     <li>xfz<a href="javascript:;">删除</a></li>
+     <li>xfz<a href="javascript:;">删除</a></li>
+     <li>xfz<a href="javascript:;">删除</a></li>
+     <li>xfz<a href="javascript:;">删除</a></li>
+   </ul>
+</body>
+<script type="text/javascript">
+  window.onload = function () {
+//假删除,不会干掉dom结构
+//数据是最重要的
+    //包含块只有css里面有
+    //offsetParent相当于js中的包含块性质，但又不同
+    /*
+    * ev||event
+    * 鼠标滚轮
+    * 事件绑定
+    * offsetParent
+    *         1、父级是否有定位（4种）
+    *         2、本身是否有定位（4种）
+    *         3、浏览器不同
+    * 以上是js的兼容性问题
+    * */
+var aNodes = document.querySelectorAll(".list >li >a");
+for(var i=0;i<aNodes.length;i++){
+  aNodes[i].onclick=function () {
+    //回调函数的异步执行的
+    this.parentNode.style.display="none";
+  }
+}
+
+  }
+
+  /*
+  * offsetParent（如果body和html直接的margin被清掉）
+  *       本身定位为fixed
+  *                 ==> offsetParent:null   （不是火狐）
+  *                  ==> offsetParent:body   火狐
+  *      本身定位不为fixed
+  *                父级没有定位
+  *                     ==> offsetParent:body
+  *                父级有定位
+  *                      ==> offsetParent:定位父级
+  *
+  *haslayout
+  *      ie7以下，如果当前元素的某个父级触发了haslayout，
+  *      那么offsetParent就会被指向到这个触发了layout特性的父节点上
+  *注意点：分清parentNode和offsetParent的qubie
+  * parentNode代表直接父级
+  * offsetParent类似于css的包含块
+  *
+  * offsetParent的作用
+  * offsetLeft和offsetTop是参照于offsetParent的内边距边界的
+  *
+  * dom里所有元素都是有offsetLeft和offsetTop的
+   *    */
+</script>
+</html>

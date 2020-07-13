@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+ #wrap{
+  width: 200px;
+   height: 200px;
+   padding: 50px;
+   border:10px solid;
+   margin: 60px;
+ }
+  </style>
+</head>
+<body id="body">
+   <div id="wrap">
+     wrap
+   </div>
+</body>
+<script type="text/javascript">
+  /*
+  * 默认情况下背景图片是从padding box开始绘制
+  *    从border box开始剪裁
+  *
+  *    所以padding区域我们也叫做可视区域
+  *
+  *    clientWidth:padding box(可视区域)
+  *
+  *    offsetWidth = clientWidth + border
+  * */
+  window.onload = function () {
+    var wrap = document.querySelector("#wrap");
+    console.log(wrap.clientWidth,wrap.clientHeight);
+    console.log(wrap.offsetWidth,wrap.offsetHeight);
+  }
+</script>
+</html>

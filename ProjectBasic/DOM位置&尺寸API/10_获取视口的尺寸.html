@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 50px" id="html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    html,body{
+     height: 100%;
+     overflow: hidden;
+    }
+    #wrap{
+      width: 200px;
+      height: 200px;
+      padding: 50px;
+      border:10px solid;
+      margin: 60px;
+    }
+  </style>
+</head>
+<body id="body">
+<div id="wrap">
+  wrap
+</div>
+</body>
+<script type="text/javascript">
+  window.onload = function () {
+    /*
+    * document.documentElement.clientWidth 拿的并不是根标签的可视区域，拿的就是视口的大小
+    * document.documentElement.offsetWidth 拿的是根标签的border-box
+    *
+    * 注意点：
+    *        在ie10及ie10以下，根标签clientWidth和offsetWidth
+    *                                    统一被指定为视口的宽度
+    *
+    * */
+     var w = document.documentElement.clientWidth;
+     var w2 = document.documentElement.offsetWidth;
+     console.log(w,w2);
+    }
+</script>
+</html>

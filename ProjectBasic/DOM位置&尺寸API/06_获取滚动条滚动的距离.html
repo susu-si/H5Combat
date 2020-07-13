@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    html,body{
+      height: 100%;
+    /*  overflow: hidden;*/
+    }
+    /*
+    到body是绝对位置
+    到视口的是相对位置
+    */
+    #wrap{
+      position: absolute;
+      background: pink;
+      left: 200px;
+      top: 200px;
+    }
+    #inner1{
+      position: absolute;
+      background: yellow;
+      left: 150px;
+      top: 150px;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body id="body" style="height: 3000px;width: 3000px;" >
+<div id="wrap">wrap
+  <div id="inner1">inner1
+  </div>
+</div>
+</body>
+
+<script type="text/javascript">
+  /*
+  * 拿一个元素的绝对位置也就是到body的位置
+  * 如果没有滚动条那么绝对位置就是相对位置
+  * 当有滚动条的时候绝对位置减去滚动条滚动的位置就是你的相对位置
+  * */
+  window.onload=function () {
+    //滚动条滚动时，元素滚动的距离
+   var L = document.documentElement.scrollLeft || document.body.scrollLeft;
+   var T = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+  console.log(L,T);
+  }
+</script>
+</html>
+

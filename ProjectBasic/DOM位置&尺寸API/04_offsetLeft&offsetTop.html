@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    #wrap{
+      position: absolute;
+      background: pink;
+    }
+    #inner1{
+      position: fixed;
+      background: yellow;
+    }
+    #inner2{
+      position: relative;
+      background: green;
+    }
+    #inner3{
+      position: fixed;
+      background: blue;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body id="body">
+<div id="wrap">wrap
+  <div id="inner1">inner1
+    <div id="inner2">inner2
+      <div id="inner3"></div>
+    </div>
+  </div>
+</div>
+</body>
+<!--
+offsetLeft 和offsetTop是参照于offsetParent的
+-->
+<script type="text/javascript">
+  window.onload=function () {
+
+  }
+</script>
+</html>
+

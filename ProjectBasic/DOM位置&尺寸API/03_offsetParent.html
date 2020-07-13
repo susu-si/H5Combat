@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    #wrap{
+      position: absolute;
+    }
+    #inner1{
+      position: fixed;
+    }
+    #inner2{
+      position: relative;
+    }
+    #inner3{
+      position: fixed;
+    }
+  </style>
+</head>
+<body id="body">
+<div id="wrap">wrap
+  <div id="inner1">inner1
+    <div id="inner2">inner2
+      <div id="inner3"></div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+window.onload=function () {
+  console.log(inner3.offsetParent.id);
+}
+</script>
+</html>
